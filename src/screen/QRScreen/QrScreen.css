@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
   height: 100vh;
   background-color: #252B48;
@@ -25,7 +24,7 @@
 }
 
 #reader {
-  color: #40946d;
+  color: #2dc4b1;
   width: 250px;
   height: 250px;
 }
@@ -92,8 +91,8 @@
   border-radius: 2px;
   margin-top: 1rem;
   color: #fff;
-  background-color: #07c160;
-  border: 1px solid #07c160;
+  background-color: #2dc4b1;
+  border: 1px solid #2dc4b1;
   position: relative;
   display: inline-block;
   box-sizing: border-box;
