@@ -1,5 +1,5 @@
 import React, { useEffect,useRef, useState } from "react";
-import { Html5QrcodeScanner } from "html5-qrcode";
+import { Html5QrcodeScanner, Html5QrcodeSupportedFormats } from "html5-qrcode";
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux'
 import { updateQrValue } from './../../redux/QrReducer'
@@ -12,7 +12,8 @@ export default function QrScreen() {
   useEffect(() => {
     let config = {
       fps: 5,
-      qrbox: 250
+      qrbox: 250,
+      formatsToSupport: [ Html5QrcodeSupportedFormats.QR_CODE ]
     };
     let scanner = new Html5QrcodeScanner("reader", config, false)
     scanner.render(onScanSuccess, onError)
