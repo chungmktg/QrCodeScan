@@ -9,7 +9,7 @@ export default function QrScreen() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  function launchQRCode() {
     let config = {
       fps: 5,
       qrbox: 250,
@@ -18,11 +18,7 @@ export default function QrScreen() {
     };
     let scanner = new Html5QrcodeScanner(
       "reader",
-      {
-        fps: 5,
-        qrbox: 250,
-        formatsToSupport: [Html5QrcodeSupportedFormats.QR_CODE],
-      },
+      config,
       false
     );
     scanner.render(onScanSuccess, onError);
@@ -36,10 +32,20 @@ export default function QrScreen() {
     function onError(error: any) {
       console.warn(`QR error = ${error}`);
     }
-
     return () => {
       scanner.clear();
-    };
+    }; 
+  }
+
+  useEffect(() => {
+    navigator.mediaDevices
+      .getUserMedia({ video: true })
+      .then(() => {
+        launchQRCode()
+      })
+      .catch((error) => {
+        console.error("Failed to access camera: ", error);
+      });
   }, [navigate]);
 
 
