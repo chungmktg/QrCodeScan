@@ -16,7 +16,7 @@ export default function QrScreen() {
         { facingMode: "environment" },
         {
           fps: 5, // Optional, frame per seconds for qr code scanning
-          qrbox: { width: 300, height: 300 }, // Optional, if you want bounded box UI
+          qrbox: { width: 250, height: 250 }, // Optional, if you want bounded box UI
         },
         (decodedText, decodedResult) => {
           dispatch(updateQrValue(decodedText));
