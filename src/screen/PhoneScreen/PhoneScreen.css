@@ -1,17 +1,12 @@
 /* src/PhoneScreen.css */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
 
 .PhoneScreen {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  height: 100vh;
   background-color: #fff;
+}
+.form-group {
+  justify-content: flex-start;
 }
 
 h1 {
@@ -27,13 +22,6 @@ form {
 
 .form-group {
   margin-bottom: 20px;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: black;
 }
 
 input[type="text"] {
@@ -52,6 +40,7 @@ button[type="submit"] {
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 8px;
+  margin-top: 16px;
 }
 
 button[type="submit"]:hover {
@@ -74,4 +63,14 @@ button[type="submit"]:hover {
     padding: 8px 16px;
     font-size: 14px;
   }
+}
+
+.react-tel-input .country-list {
+
+  text-align: left;
+}
+
+.react-tel-input .country-list .flag {
+  display: inline-block;
+  position: relative;
 }
